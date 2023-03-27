@@ -14,8 +14,10 @@ const p2Display = document.querySelector("#p2Display");
 const winnigScoreSelect = document.querySelector("#winning");
 
 let winningScore = 3;
+let tempScore = 3;
 winnigScoreSelect.addEventListener("change", function () {
   winningScore = parseInt(this.value);
+  tempScore = winningScore;
   //   when there is a change in the select menu then jo bhi value select hui hogi = this.value
   reset(); //reset the score and everything else
 });
@@ -83,4 +85,5 @@ function reset() {
 
   p1Button.disabled = false;
   p2Button.disabled = false;
+  winningScore = tempScore;
 }
